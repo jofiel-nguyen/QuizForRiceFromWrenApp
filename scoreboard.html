@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scoreboard</title>
+  <link rel="stylesheet" type="text/css" href="./Assets/style.css">
+</head>
+<body>
+    
+  <main>
+    <section id="scoreboard">
+      <h2>Scoreboard</h2>
+      <ol id="scores"></ol>
+    </section>
+  </main>
+  <script>
+    // Retrieve scores data from quiz.js file
+    const scores = JSON.parse(localStorage.getItem("scores")) || [];
+
+    // Populate scores list
+    const scoresList = document.getElementById("scores");
+    scores.forEach(score => {
+      const li = document.createElement("li");
+      li.textContent = `${score.initials}: ${score.score}`;
+      scoresList.appendChild(li);
+    });
+  </script>
+</body>
+</html>

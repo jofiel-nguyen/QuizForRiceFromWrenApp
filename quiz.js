@@ -96,8 +96,23 @@ function showQuestion() {
   });
 }
 
+function submitScore() {
+  const initials = document.getElementById("initials").value.trim();
 
+  // Check if initials input is not empty
+  if (initials !== "") {
+    const score = {
+      initials: initials,
+      score: timeLeft
+    };
+    let scores = JSON.parse(localStorage.getItem("scores")) || [];
+    scores.push(score);
+    localStorage.setItem("scores", JSON.stringify(scores));
 
+    // Redirect to scoreboard page
+    window.location.href = "scoreboard.html";
+  }
+}
 function endQuiz() {
   questionEl.textContent = "Quiz is over!";
   answerOptionsEl.innerHTML = "";
@@ -105,7 +120,10 @@ function endQuiz() {
   const initials = prompt("Enter your initials:");
   const score = timeLeft;
 
-  localStorage.setItem(initials, score);
+  // Save the score in localStorage
+  let scores = JSON.parse(localStorage.getItem("scores")) || [];
+  scores.push({ initials: initials, score: score });
+  localStorage.setItem("scores", JSON.stringify(scores));
 
   showScores();
 
@@ -126,27 +144,3 @@ function endQuiz() {
   });
 }
 
-
-function showScores() {
-  scoresEl.innerHTML = "";
-
-  for (let i = 0; i < localStorage.length; i++) {
-    const initials = localStorage.key(i);
-    const score = localStorage.getItem(initials);
-
-    const li = document.createElement("li");
-    li.textContent = `${initials}: ${score}`;
-    scoresEl.appendChild(li);
-  }
-
-  const clearButton = document.createElement("button");
-  clearButton.textContent = "Clear Scores";
-  clearButton.addEventListener("click", function() {
-    const confirmClear = confirm("Are you sure you want to clear all scores?");
-    if (confirmClear) {
-      localStorage.clear();
-      scoresEl.innerHTML = "Scores cleared.";
-    }
-  });
-  scoresEl.appendChild(clearButton);
-}

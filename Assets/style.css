@@ -1,98 +1,109 @@
+/* Set a maximum width for the page */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  h1 {
-    margin: 0;
-  }
-  
-  main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
-  }
-  
-  #quiz {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    flex-basis: 60%;
-    margin-bottom: 20px;
-    padding: 20px;
-  }
-  
-  #quiz h2 {
-    font-size: 24px;
-    margin-top: 0;
-  }
-  
-  #quiz #timer {
-    font-size: 16px;
-    margin-bottom: 20px;
-    top: 10px;
-    position: absolute;
-    right: 10px;
-    color: white;
-  }
-  
-  #quiz #question {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-  
-  #quiz #answer-options {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #quiz #answer-options li {
-    margin-bottom: 10px;
-  }
-  
-  #quiz button {
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 10px;
-  }
-  
-  #scoreboard {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    flex-basis: 35%;
-    padding: 20px;
-  }
-  
-  #scoreboard h2 {
-    font-size: 24px;
-    margin-top: 0;
-  }
-  
-  #scoreboard #scores {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #scoreboard #scores li {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Use a modern sans-serif font */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Add some breathing room to the top and bottom of the page */
+body {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Add a border and background to the header */
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #555;
+}
+
+/* Increase the font size of the header */
+header h1 {
+  font-size: 36px;
+}
+
+/* Add a background and border to the quiz section */
+#quiz {
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+
+/* Increase the font size and line height of the question */
+#quiz #question {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+/* Add some spacing to the answer options */
+#quiz #answer-options li {
+  margin-bottom: 15px;
+}
+
+/* Use a different color for the button when hovering */
+#quiz button:hover {
+  background-color: #3e8e41;
+}
+#quiz #timer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+#scoreboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+#scoreboard h2 {
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#scoreboard #scores {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#scoreboard #scores li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#scoreboard #scores li span {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #333;
+}
+
+#scoreboard #scores li .score-value {
+  font-weight: bold;
+  color: #4CAF50;
+}
