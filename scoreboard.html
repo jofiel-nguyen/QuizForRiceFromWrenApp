@@ -11,8 +11,10 @@
     <section id="scoreboard">
       <h2>Scoreboard</h2>
       <ol id="scores"></ol>
+      <button id="clear-scores">Clear Scores</button>
     </section>
   </main>
+  
   <script>
     // Retrieve scores data from quiz.js file
     const scores = JSON.parse(localStorage.getItem("scores")) || [];
@@ -24,6 +26,20 @@
       li.textContent = `${score.initials}: ${score.score}`;
       scoresList.appendChild(li);
     });
+
+    // Add event listener to "Clear Scores" button
+    const clearScoresButton = document.getElementById("clear-scores");
+    clearScoresButton.addEventListener("click", clearScores);
+
+    function clearScores() {
+      // Ask the user to confirm that they want to clear the scores
+      const confirmed = confirm("Do you want to clear scores?");
+      
+      if (confirmed) {
+        localStorage.removeItem("scores");
+        showScores(); // Refresh the scoreboard after clearing the scores
+      }
+    }
   </script>
 </body>
 </html>
