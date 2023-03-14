@@ -128,19 +128,15 @@ function endQuiz() {
   showScores();
 
   const playMoreButton = document.createElement("button");
-  playMoreButton.textContent = "Play again";
-  playMoreButton.addEventListener("click", function() {
-    startQuiz();
-  });
+  playMoreButton.textContent = "Play Again?";
   answerOptionsEl.appendChild(playMoreButton);
 
-  const playMoreMessage = document.createElement("p");
-  playMoreMessage.textContent = "Do you want to play again?";
-  answerOptionsEl.appendChild(playMoreMessage);
-
-  playMoreButton.addEventListener("click", function() {
+  playMoreButton.addEventListener("click", () => {
+    currentQuestionIndex = 0;
+    timeLeft = 75;
+    startTimer();
+    showQuestion();
     answerOptionsEl.removeChild(playMoreButton);
-    answerOptionsEl.removeChild(playMoreMessage);
+    scoresEl.style.display = "none";
   });
 }
-
