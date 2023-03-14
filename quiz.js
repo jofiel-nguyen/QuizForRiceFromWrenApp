@@ -1,18 +1,18 @@
 const questions = [
   {
-    question: "What is the capital of France?",
-    options: ["Paris", "Rome", "Berlin", "Madrid"],
-    answer: "Paris"
+    question: "How do you insert a copyright symbol on a browser page?",
+    options: ["Insert the copyright symbol", "Type & Copy", "& #169", "All of that"],
+    answer: "All of that"
   },
   {
-    question: "What is the largest ocean in the world?",
-    options: ["Atlantic", "Pacific", "Indian", "Arctic"],
-    answer: "Pacific"
+    question: "What is the use of alternative text in image mapping?",
+    options: ["A descriptive text for link", "Decoration", "Mapping", "Texting"],
+    answer: "A descriptive text for link"
   },
   {
-    question: "What is the currency of Japan?",
-    options: ["Yen", "Dollar", "Euro", "Pound"],
-    answer: "Yen"
+    question: "Do older HTML files work on newer browsers?",
+    options: ["No", "Yes", "I don't know", "Maybe"],
+    answer: "Yes"
   }
 ];
 
