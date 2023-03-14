@@ -124,19 +124,8 @@ function endQuiz() {
   let scores = JSON.parse(localStorage.getItem("scores")) || [];
   scores.push({ initials: initials, score: score });
   localStorage.setItem("scores", JSON.stringify(scores));
-
+// Show the "Play Again" button
+  playAgainBtn.style.display = "block";
   showScores();
-
-  const playMoreButton = document.createElement("button");
-  playMoreButton.textContent = "Play Again?";
-  answerOptionsEl.appendChild(playMoreButton);
-
-  playMoreButton.addEventListener("click", () => {
-    currentQuestionIndex = 0;
-    timeLeft = 75;
-    startTimer();
-    showQuestion();
-    answerOptionsEl.removeChild(playMoreButton);
-    scoresEl.style.display = "none";
-  });
+  
 }

@@ -23,5 +23,23 @@
     </section>    
   </main>
   <script src="quiz.js"></script>
+  <button id="play-again-btn" style="display: none;">Play Again</button>
+  <script>
+    const playAgainBtn = document.getElementById("play-again-btn");
+
+    playAgainBtn.addEventListener("click", startAgain);
+    function startAgain() {
+      const playAgain = prompt("Do you want to play again?");
+      if (playAgain === "yes") {
+        currentQuestionIndex = 0;
+        timeLeft = 75;
+        startTimer();
+        showQuestion();
+        scoresEl.style.display = "none";
+        playAgainBtn.style.display = "none";
+      }
+}
+
+  </script>
 </body>
 </html>
