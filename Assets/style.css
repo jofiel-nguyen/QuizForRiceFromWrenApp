@@ -107,3 +107,20 @@ header h1 {
   font-weight: bold;
   color: #4CAF50;
 }
+/* Styles for screens with a width of 600px or less */
+@media screen and (max-width: 600px) {
+  /* Add your styles here */
+  body {
+    background-color: lightblue;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  footer p {
+    color: #040d21;
+    text-align: center;
+    font-size: 20px;
+}
+}
