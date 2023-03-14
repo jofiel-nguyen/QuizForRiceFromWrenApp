@@ -30,13 +30,15 @@
     playAgainBtn.addEventListener("click", startAgain);
     function startAgain() {
       const playAgain = prompt("Do you want to play again?");
-      if (playAgain === "yes") {
+      if (playAgain === "yes" || playAgain === "y" || playAgain === "Yes" || playAgain === "YES") {
         currentQuestionIndex = 0;
         timeLeft = 75;
         startTimer();
         showQuestion();
         scoresEl.style.display = "none";
         playAgainBtn.style.display = "none";
+      } else {
+        console.log("That's fine! See you later! Thank you for playing! Have a good day!")
       }
 }
 

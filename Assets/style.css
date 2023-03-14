@@ -69,6 +69,12 @@ header h1 {
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+a {
+  text-decoration: none;
 }
 
 #scoreboard h2 {
